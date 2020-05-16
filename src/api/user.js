@@ -2,15 +2,16 @@ import request from '@/utils/request'
 
 export function login(data) {
   return request({
-    url: '/vue-admin-template/user/login',
+    url: '/authorizations',
     method: 'post',
+    headers: { 'Access-Control-Allow-Origin': '*' },
     data
   })
 }
 
-export function getInfo(token) {
+export function getInfo({ token }) {
   return request({
-    url: '/vue-admin-template/user/info',
+    url: `/user`,
     method: 'get',
     params: { token }
   })
