@@ -1,6 +1,9 @@
 <template>
   <div class="dashboard-container">
-    <div class="dashboard-text">name: {{ name }}</div>
+      <el-row>
+        <el-col :span="2"><div class="block"><el-avatar shape="square" :size="100" :src="avatar"></el-avatar></div></el-col>
+        <el-col :span="3"><div class="dashboard-text" style="margin-top: 50px"><i class="el-icon-s-custom"></i>{{ name }}</div></el-col>
+      </el-row>
   </div>
 </template>
 
@@ -11,7 +14,7 @@ export default {
   name: 'Dashboard',
   computed: {
     ...mapGetters([
-      'name'
+      'name', 'avatar'
     ])
   }
 }

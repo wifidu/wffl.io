@@ -4,7 +4,6 @@ export function login(data) {
   return request({
     url: '/authorizations',
     method: 'post',
-    headers: { 'Access-Control-Allow-Origin': '*' },
     data
   })
 }
@@ -21,5 +20,12 @@ export function logout() {
   return request({
     url: '/vue-admin-template/user/logout',
     method: 'post'
+  })
+}
+
+export function fetchList() {
+  return request({
+    url: 'users',
+    method: 'get'
   })
 }
